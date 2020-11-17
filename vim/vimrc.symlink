@@ -1,4 +1,65 @@
-syntax on
+"==============================================================
+"               .vimrc
+"==============================================================
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+" Initial Configuration
+source ~/.dotfiles/vim/rc/init.vim
+
+if has('nvim')
+  execute "lua require'init'"
+endif
+
+" Functions
+source ~/.dotfiles/vim/rc/function.vim
+
+
+"===============================
+
+" Base Configuration
+source ~/.dotfiles/vim/rc/base.vim
+if has('nvim')
+  source ~/.dotfiles/vim/rc/base.nvim
+endif
+
+" Layout Settings
+source ~/.dotfiles/vim/rc/display.vim
+source ~/.dotfiles/vim/rc/statusline.vim
+
+"----------------
+
+" Plugins
+source ~/.dotfiles/vim/rc/pluginlist.vim
+
+" Key mapping
+source ~/.dotfiles/vim/rc/keyconfig.vim
+source ~/.dotfiles/vim/rc/mappings.vim
+
+" Command
+source ~/.dotfiles/vim/rc/command.vim
+source ~/.dotfiles/vim/rc/autocmd.vim
+
+" Configuration
+for f in split(glob('~/.dotfiles/vim/rc/myplugins/*.vim'), '\n')
+  execute "source " . f
+endfor
+if has('nvim')
+  for f in split(glob('~/.dotfiles/vim/rc/myplugins/*.nvim'), '\n')
+    execute "source " . f
+  endfor
+endif
+
+" Plugin Settings
+source ~/.dotfiles/vim/rc/pluginconfig.vim
+
+
+"===============================
+if exists('g:vscode')
+  source ~/.dotfiles/vim/rc/vscode-neovim/mappings.vim
+endif
+
+
+"===============================
+
+" Local Configuration
+call SourceSafe('~/.vimrc.local')
+

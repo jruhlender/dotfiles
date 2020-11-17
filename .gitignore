@@ -1,1 +1,4 @@
 git/gitconfig.local.symlink
+/zsh/zinit
+/zsh/.zsh_history
+/zsh/.z

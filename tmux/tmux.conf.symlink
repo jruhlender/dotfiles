@@ -1,0 +1,12 @@
+#==============================================================#
+#                .tmux.conf                                    #
+#==============================================================#
+
+source-file "$HOME/.dotfiles/tmux/conf/base.tmux"
+
+source-file "$HOME/.dotfiles/tmux/conf/color.tmux"
+
+source-file "$HOME/.dotfiles/tmux/conf/bind.tmux"
+
+source-file "$HOME/.dotfiles/tmux/conf/plugin.tmux"
+
