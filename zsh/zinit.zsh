@@ -52,12 +52,19 @@ _my_zsh_custom_plugins=(
     zsh-users/zsh-completions
     micha/resty
     supercrabtree/k
+    rupa/z
     ael-code/zsh-colored-man-pages
     wfxr/forgit
-    agkozak/zsh-z
-    felipec/git-completion
     junegunn/fzf
     paulirish/git-open
+    djui/alias-tips
+    joshuarubin/zsh-homebrew
+    mrowa44/emojify
+    rutchkiwi/copyzshell
+    webyneter/docker-aliases
+    unixorn/docker-helpers.zshplugin
+    changyuheng/fz
+    iam4x/zsh-iterm-touchbar
 )
 
 typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=true
