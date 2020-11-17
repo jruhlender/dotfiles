@@ -1,8 +1,6 @@
 typeset -g MY_ZSH_CONFIG_PATH=${ZDOTDIR:-$HOME/.config/zinit}
 typeset -g MY_ZINIT_PATH=${ZDOTDIR:-$HOME}/.zinit
 
-HISTFILE=$MY_ZSH_CONFIG_PATH/zsh_history
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -65,6 +63,8 @@ _my_zsh_custom_plugins=(
     unixorn/docker-helpers.zshplugin
     changyuheng/fz
     iam4x/zsh-iterm-touchbar
+    b4b4r07/enhancd
+    bobsoppe/zsh-ssh-agent
 )
 
 typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=true
@@ -72,14 +72,20 @@ typeset -g ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 __zinit_plugin_loaded_callback() {
     if [[ "$ZINIT[CUR_PLUGIN]" == "zsh-autosuggestions" ]]; then
-        ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[@]/forward-char}")
-        ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=forward-char
+        #ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${ZSH_AUTOSUGGEST_ACCEPT_WIDGETS[@]/forward-char}")
+        #ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=forward-char
+        ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+        ZSH_AUTOSUGGEST_USE_ASYNC=1
+        ZSH_AUTOSUGGEST_HISTORY_IGNORE=(cd *)
     elif [[ "$ZINIT[CUR_PLUGIN]" == "zsh-history-substring-search" ]]; then
-        bindkey "\ek" history-substring-search-up
-        bindkey "\ej" history-substring-search-down
+        bindkey "^[[A" history-substring-search-up
+        bindkey "^[[B" history-substring-search-down
+        HISTORY_SUBSTRING_SEARCH_FUZZY=1
     fi
 }
 
 zinit wait lucid depth=1  \
     atload='__zinit_plugin_loaded_callback' \
     for ${_my_zsh_custom_plugins[@]}
+
+export ENHANCD_FILTER=fzf:fzy:peco

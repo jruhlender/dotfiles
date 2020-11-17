@@ -29,6 +29,8 @@ zstyle ':completion:*:options' description 'yes'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' keep-prefix
 zstyle ':completion:*' recent-dirs-insert both
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
 # Color-coded complement candidates (GNU ls の色定義を流用)
 zstyle ':completion:*' list-colors "${LS_COLORS}"
 zstyle ':completion:*' special-dirs true
@@ -44,10 +46,6 @@ zstyle ':completion:*:default' menu select=1
 zstyle ':completion:*:cd:*' tag-order local-directories path-directories
 # 補完リストの順番指定
 zstyle ':completion:*:cd:*' group-order local-directories path-directories
-# psコマンドを補完する
-#zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-# sudoコマンドを補完する
-#zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 # 変数の添字を補完する
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 # manの補完をセクション番号別に表示させる
@@ -59,6 +57,6 @@ zstyle ':completion:*' file-sort 'modification'
 zstyle ':completion:*:make:*:targets' call-command true
 zstyle ':completion:*:make::' tag-order targets:
 zstyle ':completion:*:*:*make:*:targets' command awk \''/^[a-zA-Z0-9][^\/\t=]+:/ {print $1}'\' \$file
-#zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
-#zstyle ':completion:*:*:*make:*:*' tag-order '!targets !functions !file-patterns'
-#zstyle ':completion:*:*:*make:*:*' avoid-completer '_files'
+# zstyle ':completion:*:*:make:*:targets' ignored-patterns '*.o'
+# zstyle ':completion:*:*:*make:*:*' tag-order '!targets !functions !file-patterns'
+# zstyle ':completion:*:*:*make:*:*' avoid-completer '_files'
