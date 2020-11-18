@@ -9,9 +9,9 @@ if [ ! -f $MY_ZINIT_PATH/bin/zinit.zsh ] && ((${+commands[git]})); then
     __zinit_just_installed=1
     mkdir -p $MY_ZINIT_PATH && chmod g-rwX "$MY_ZINIT_PATH" && \
       git clone --depth=1 https://github.com/zdharma/zinit.git $MY_ZINIT_PATH/bin
-  fi
+fi
 
-  if [ -f $MY_ZINIT_PATH/bin/zinit.zsh ]; then
+if [ -f $MY_ZINIT_PATH/bin/zinit.zsh ]; then
     declare -A ZINIT
 
     ZINIT[HOME_DIR]="$MY_ZINIT_PATH"
@@ -19,8 +19,11 @@ if [ ! -f $MY_ZINIT_PATH/bin/zinit.zsh ] && ((${+commands[git]})); then
     source $MY_ZINIT_PATH/bin/zinit.zsh
 
     if [ -z "$skip_global_compinit" ]; then
-        autoload -Uz _zinit
-        (( ${+_comps} )) && _comps[zinit]=_zinit
+        #autoload -Uz _zinit
+        #(( ${+_comps} )) && _comps[zinit]=_zinit
+
+        autoload -Uz compinit
+        compinit
         source <(kubectl completion zsh)
     fi
 
@@ -64,8 +67,6 @@ _my_zsh_custom_plugins=(
     unixorn/docker-helpers.zshplugin
     changyuheng/fz
     iam4x/zsh-iterm-touchbar
-    b4b4r07/enhancd
-    
 )
 # bobsoppe/zsh-ssh-agent
 
@@ -90,4 +91,16 @@ zinit wait lucid depth=1  \
     atload='__zinit_plugin_loaded_callback' \
     for ${_my_zsh_custom_plugins[@]}
 
+zinit ice proto'git' pick'init.sh'
+zinit light b4b4r07/enhancd
 export ENHANCD_FILTER=fzf:fzy:peco
+export ENHANCD_DOT_ARG="..."
+export ENHANCD_DISABLE_HOME=1
+
+# Setup dtags
+command -v dtags-activate > /dev/null 2>&1 && eval "`dtags-activate zsh`"
+unalias -m 't'
+unalias -m 'u'
+unalias -m 'd'
+unalias -m 'e'
+unalias -m 'p'

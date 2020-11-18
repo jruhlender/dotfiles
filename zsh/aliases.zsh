@@ -2,12 +2,6 @@
 ##          Aliases                                           ##
 #==============================================================#
 
-## common ##
-#alias ..='cd ..'
-#alias ...='cd .. && cd ..'
-#alias .....='cd .. && cd .. && cd ..'
-alias cl='clear'
-
 # ls
 alias la='ls -aF -G'
 alias lla='ls -alF -G'
@@ -16,7 +10,6 @@ alias ls='ls -G'
 alias ll='ls -l -G'
 alias l.='ls -d .[a-zA-Z]* -G'
 
-# grep ファイル名表示, 行数表示, バイナリファイルは処理しない
 alias gre='grep -H -n -I -G'
 
 ## application ##
@@ -100,11 +93,6 @@ alias rector='ddev rector'
 ##          FOSH stuff EB                                     ##
 #==============================================================#
 
-unalias -m 't'
-unalias -m 'u'
-unalias -m 'd'
-unalias -m 'e'
-unalias -m 'p'
 alias eurobaustoffRun='fosh run "@eurobaustoff"'
 alias b2bRun='fosh run "@b2b"'
 alias b2cRun='fosh run "@b2c"'
@@ -113,8 +101,6 @@ alias stagingRun='fosh run "@staging"'
 alias liveRun='fosh run "@live"'
 alias deadRun='fosh run "@dead"'
 alias cphpstorm='dcomposer n98:phpstorm:register-source-folders --vendor=n98 --vendor=euro && dcomposer n98:phpstorm:register-vcs --vendor=n98 --vendor=euro'
-
-command -v dtags-activate > /dev/null 2>&1 && eval "`dtags-activate zsh`"
 
 #==============================================================#
 ##          improvement command                               ##
