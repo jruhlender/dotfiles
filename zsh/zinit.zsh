@@ -19,8 +19,9 @@ if [ ! -f $MY_ZINIT_PATH/bin/zinit.zsh ] && ((${+commands[git]})); then
     source $MY_ZINIT_PATH/bin/zinit.zsh
 
     if [ -z "$skip_global_compinit" ]; then
-      autoload -Uz _zinit
-      (( ${+_comps} )) && _comps[zinit]=_zinit
+        autoload -Uz _zinit
+        (( ${+_comps} )) && _comps[zinit]=_zinit
+        source <(kubectl completion zsh)
     fi
 
     [ -n "$__zinit_just_installed" ] && \
