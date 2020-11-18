@@ -64,8 +64,9 @@ _my_zsh_custom_plugins=(
     changyuheng/fz
     iam4x/zsh-iterm-touchbar
     b4b4r07/enhancd
-    bobsoppe/zsh-ssh-agent
+    
 )
+# bobsoppe/zsh-ssh-agent
 
 typeset -g ZSH_AUTOSUGGEST_USE_ASYNC=true
 typeset -g ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
