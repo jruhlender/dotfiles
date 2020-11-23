@@ -78,6 +78,7 @@ alias z3noServer='mpssh  -f ~/.ssh/z3noServer'
 alias weather='ansiweather -l Holzminden,DE -u metric -F -s true -a false'
 # alias not='terminal-notifier -title "Execution done" -message "Huray"'
 # alias htop='_ htop'
+alias topgrade='topgrade && zinit self-update && zinit update --all'
 
 #==============================================================#
 ##          DDEV                                              ##

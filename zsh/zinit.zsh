@@ -93,6 +93,7 @@ zinit wait lucid depth=1  \
 
 zinit ice proto'git' pick'init.sh'
 zinit light b4b4r07/enhancd
+zinit cclear
 export ENHANCD_FILTER=fzf:fzy:peco
 export ENHANCD_DOT_ARG="..."
 export ENHANCD_DISABLE_HOME=1
