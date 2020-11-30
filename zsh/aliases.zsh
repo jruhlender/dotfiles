@@ -89,6 +89,7 @@ alias mr2='ddev mr2'
 alias unit-test='ddev unit-test'
 alias qa='ddev qa'
 alias rector='ddev rector'
+alias composer-normalize='ddev composer-normalize'
 
 #==============================================================#
 ##          FOSH stuff EB                                     ##
