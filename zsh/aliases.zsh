@@ -84,12 +84,12 @@ alias topgrade='topgrade && zinit self-update && zinit update --all'
 ##          DDEV                                              ##
 #==============================================================#
 
-alias dcomposer='ddev composer'
-alias mr2='ddev mr2'
-alias unit-test='ddev unit-test'
-alias qa='ddev qa'
-alias rector='ddev rector'
-alias composer-normalize='ddev composer-normalize'
+alias dcomposer='ddev composer $*'
+alias mr2='ddev mr2 $*'
+alias unit-test='ddev unit-test $*'
+alias qa='ddev qa $*'
+alias rector='ddev rector $*'
+alias composer-normalize='ddev composer-normalize $*'
 
 #==============================================================#
 ##          FOSH stuff EB                                     ##
