@@ -86,6 +86,7 @@ alias topgrade='topgrade && zinit self-update && zinit update --all'
 
 alias dcomposer='ddev composer $*'
 alias mr2='ddev mr2 $*'
+alias check-modules='ddev mr2 n98:modules:check-for-updates -nl n98 euro'
 alias unit-test='ddev unit-test $*'
 alias qa='ddev qa $*'
 alias rector='ddev rector $*'
