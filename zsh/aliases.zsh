@@ -86,7 +86,7 @@ alias topgrade='topgrade && zinit self-update && zinit update --all'
 
 alias dcomposer='ddev composer $*'
 alias mr2='ddev mr2 $*'
-alias check-modules='ddev mr2 n98:modules:check-for-updates -nl n98 euro'
+alias check-modules='ddev composer n98:modules:check-for-updates --hl n98 euro'
 alias unit-test='ddev unit-test $*'
 alias qa='ddev qa $*'
 alias rector='ddev rector $*'
@@ -103,7 +103,7 @@ alias coRun='fosh run "@co"'
 alias stagingRun='fosh run "@staging"'
 alias liveRun='fosh run "@live"'
 alias deadRun='fosh run "@dead"'
-alias cphpstorm='dcomposer n98:phpstorm:register-source-folders --vendor=n98 --vendor=euro && dcomposer n98:phpstorm:register-vcs --vendor=n98 --vendor=euro'
+alias cphpstorm='ddev composer n98:phpstorm:register-source-folders --vendor=n98 --vendor=euro && ddev composer n98:phpstorm:register-vcs --vendor=n98 --vendor=euro'
 
 #==============================================================#
 ##          improvement command                               ##

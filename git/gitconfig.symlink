@@ -41,3 +41,5 @@
 	name = Jörn Ruhlender
 	email = j.ruhlender@netz98.de
 	signingkey = 0FF7C80B2EFFB75C55EB7E38836A167CD1DAFE0A
+[init]
+	defaultBranch = main
