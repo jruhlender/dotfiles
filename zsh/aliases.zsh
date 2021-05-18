@@ -78,7 +78,7 @@ alias z3noServer='mpssh  -f ~/.ssh/z3noServer'
 alias weather='ansiweather -l Holzminden,DE -u metric -F -s true -a false'
 # alias not='terminal-notifier -title "Execution done" -message "Huray"'
 # alias htop='_ htop'
-alias topgrade='topgrade && zinit self-update && zinit update --all'
+# alias topgrade='topgrade && zinit self-update && zinit update --all'
 
 #==============================================================#
 ##          DDEV                                              ##
@@ -103,6 +103,8 @@ alias coRun='fosh run "@co"'
 alias stagingRun='fosh run "@staging"'
 alias liveRun='fosh run "@live"'
 alias deadRun='fosh run "@dead"'
+alias b2bLiveRun='fosh run "@b2blive"'
+alias onlineRun='fosh run "@online"'
 alias cphpstorm='ddev composer n98:phpstorm:register-source-folders --vendor=n98 --vendor=euro && ddev composer n98:phpstorm:register-vcs --vendor=n98 --vendor=euro'
 
 #==============================================================#

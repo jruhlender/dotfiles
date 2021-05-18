@@ -15,12 +15,12 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/jruhlender/.gitignore
         editor = vim
 [apply]
         whitespace = nowarn
 [mergetool]
-        keepBackup = false
+	keepBackup = true
 [difftool]
         prompt = false
 [help]
@@ -35,11 +35,17 @@
 	helper = osxkeychain
 [commit]
 	gpgsign = true
+	template = /Users/jruhlender/.stCommitMsg
 [gpg]
 	program = /usr/local/bin/gpg
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
 	name = Jörn Ruhlender
 	email = j.ruhlender@netz98.de
 	signingkey = 0FF7C80B2EFFB75C55EB7E38836A167CD1DAFE0A
-[init]
-	defaultBranch = main
