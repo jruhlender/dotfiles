@@ -56,5 +56,3 @@ unset config_files
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export HOMEBREW_GITHUB_API_TOKEN=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
